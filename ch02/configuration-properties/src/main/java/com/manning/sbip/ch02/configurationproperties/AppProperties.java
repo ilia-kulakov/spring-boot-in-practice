@@ -28,7 +28,7 @@ public class AppProperties {
 	/**
 	 * Application Security configuration
 	 */
-	private final Security security;
+	private final SecurityProperties security;
 
 	public String getName() {
 		return name;
@@ -42,11 +42,11 @@ public class AppProperties {
 		return port;
 	}
 
-	public Security getSecurity() {
+	public SecurityProperties getSecurity() {
 		return security;
 	}
 
-	public AppProperties(String name, String ip, @DefaultValue("8080") int port, Security security) {
+	public AppProperties(String name, String ip, @DefaultValue("8080") int port, SecurityProperties security) {
 		this.name = name;
 		this.ip = ip;
 		this.port = port;
@@ -63,49 +63,59 @@ public class AppProperties {
 				'}';
 	}
 
-	public static class Security {
-		
-		/**
-		 * Enable Security. Possible values true/false
-		 */
-		private boolean enabled;
-		
-		/**
-		 * Token Value
-		 */
-		private final String token;
-		
-		/**
-		 * Available roles
-		 */
-		private final List<String> roles;
-		
-		public Security(boolean enabled, String token, List<String> roles) {
-			this.enabled = enabled;
-			this.token = token;
-			this.roles = roles;
-		}
-
-		public boolean isEnabled() {
-			return enabled;
-		}
-
-		public String getToken() {
-			return token;
-		}
-
-		public List<String> getRoles() {
-			return roles;
-		}
-
-		@Override
-		public String toString() {
-			return "Security{" +
-					"enabled=" + enabled +
-					", token='" + token + '\'' +
-					", roles=" + roles +
-					'}';
-		}
-	}
+//	public static class Security {
+//
+//		/**
+//		 * Enable Security. Possible values true/false
+//		 */
+//		private boolean enabled;
+//
+//		/**
+//		 * Token Value
+//		 */
+//		private final String token;
+//
+//		/**
+//		 * Available roles
+//		 */
+//		private final List<String> roles;
+//
+//		private final String runmode;
+//
+//		public Security(boolean enabled, String token, List<String> roles, String runmode) {
+//			this.enabled = enabled;
+//			this.token = token;
+//			this.roles = roles;
+//			this.runmode = runmode;
+//		}
+//
+//		public boolean isEnabled() {
+//			return enabled;
+//		}
+//
+//		public String getToken() {
+//			return token;
+//		}
+//
+//		public List<String> getRoles() {
+//			return roles;
+//		}
+//
+//		public String getRunmode() {
+//			return runmode;
+//		}
+//
+//
+//
+//		@Override
+//		public String toString() {
+//			return "Security{" +
+//					"enabled=" + enabled +
+//					", token='" + token + '\'' +
+//					", roles=" + roles +
+//					", runmode=" + runmode +
+//					'}';
+//		}
+//	}
 
 }
